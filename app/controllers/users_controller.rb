@@ -9,7 +9,6 @@ class UsersController < ApplicationController
     @user.night = Night.new(starttime: Time.now)
     @user.save
     session[:user] = @user.id
-    require'pry';binding.pry
     redirect_to drinks_path
   end
 
@@ -29,5 +28,3 @@ class UsersController < ApplicationController
   end
 
 end
-
-
