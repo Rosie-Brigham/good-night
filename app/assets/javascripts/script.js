@@ -13,7 +13,7 @@ var drinks = [
 
 user = {"weight":83,"gender":"male"};
 
-function calcSober()
+function reCalc()
 {
   var now = new Date();
 
@@ -27,15 +27,23 @@ function calcSober()
   }
 
   var BAC = 0;
+  var totalcalories = 0;
 
   for (i = 0; i < consumedDrinks.length; i++)
   {
     var units = $.map(drinks, function(obj, index) {
-    if(obj.name == consumedDrinks[i].drink) {
+      if(obj.name == consumedDrinks[i].drink) {
         return obj.units;
-    }
-  })
+      }
+    })
 
+    var calories = $.map(drinks, function(obj, index) {
+      if(obj.name == consumedDrinks[i].drink) {
+        return obj.cals;
+      }
+    })
+
+    totalcalories += parseInt(calories);
     BAC += ((0.8*units)/(user.weight*dr));
   }
 
@@ -43,7 +51,8 @@ function calcSober()
 
   var sobertime = (BAC/0.016)*3600000 + now.getTime();
 
-  $('#sobertime').html(moment(sobertime).format("dddd HH:mm"));
+  $('#sobertime').html(moment(sobertime).calendar());
+  $('#calcount').html(totalcalories);
 }
 
 $(function() {
@@ -83,7 +92,7 @@ $(function() {
       time: now.getTime()
     });
 
-    calcSober();
+    reCalc();
   });
 
 });
