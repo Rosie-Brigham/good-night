@@ -1,47 +1,37 @@
 <div class="container">
+  <h1>onTrack</h1>
   <div data-hook="admin_target_form_fields">
-    <div data-hook="name" class="field align-center">
+    <div data-hook="name" class="field align-center users-form">
       <%= form_for @user, html: {class: "nifty_form", :multipart => true } do |f| %>
 
-      <div class="form-group"><%= f.label(:age) %><br/>
-        <%= f.text_field :age, class:'form-control', placeholder:'Age'%></div><br>
+      <div class="form-group form-top data"><%= f.label(:age) %><br/>
+        <%= f.text_field :age, class:'form-control', placeholder:'Age'%>
+      </div><br>
 
-      <div class="input-group"><%= f.label(:weight) %><br/>
-        <%= f.text_field :weight, class:'form-control', placeholder:'Weight (kg)'%></div><br>
+      <div class="form-group data">
+        <%= f.label(:weight) %><br/>
+        <%= f.text_field :weight, class:'form-control', placeholder:'Weight (kg)'%>
+      </div><br>
 
-      <div class="input-group"><%= f.label(:gender) %><br>
-        <%= f.text_field :gender %></div><br>
+      <div class="form-group">
+        <%= f.label(:sex) %><br>
+        <%= radio_button_tag(:gender, "M") %>
+        <%= label_tag(:gender, "M") %><br>
+        <%= radio_button_tag(:gender, "F") %>
+        <%= label_tag(:gender, "F") %>
 
-      <%= f.submit "create" %>
+      </div><br>
+
+      <div class="form-group">
+        <%= f.label(:sober_O_Clock?) %><br>
+        <%= time_field(:sober_o_Clock, :started_at) %>
+      </div>
+
+      <%= f.submit "Let's Go!", class: "btn btn-success button"  %>
 
       <% end %>
     </div>
   </div>
 
-
-
-<form role="form">
-  <div class="form-group">
-    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Age">
-  </div>
-  <div class="form-group">
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Weight (kg)">
-  </div>
-
-  <div class="radio">
-  <label>
-    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
-    Male
-  </label>
-</div>
-<div class="radio">
-  <label>
-    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-    Female
-  </label>
 </div>
 
-  <button type="submit" class="btn btn-default">Submit</button>
-</form>
-
-</div>
