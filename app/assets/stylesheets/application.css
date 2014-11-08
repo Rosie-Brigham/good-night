@@ -20,19 +20,22 @@
     bottom: 0;
  }
 
- .col-md-1 {
- 	height: 100% !important;
- }
- .col-md-10 {
+ .col-xs-1, .col-xs-4, .col-xs-10 {
  	height: 100% !important;
  }
  .custombtn {
  	height: 100% !important;
  	border: none !important;
  	width: 100% !important;
- 	font-size: 30px;
+ 	font-size: 40px;
  }
 
  .row {
  	height:80px;
  }
+
+.align-helper{
+	height:100%;
+	display:inline-block;
+	vertical-align: middle;
+}
