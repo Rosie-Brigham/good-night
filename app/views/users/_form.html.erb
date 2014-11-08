@@ -1,18 +1,47 @@
-<div data-hook="admin_target_form_fields">
-  <div data-hook="name" class="field align-center">
-    <%= form_for @user, html: {class: "nifty_form", :multipart => true } do |f| %>
+<div class="container">
+  <div data-hook="admin_target_form_fields">
+    <div data-hook="name" class="field align-center">
+      <%= form_for @user, html: {class: "nifty_form", :multipart => true } do |f| %>
 
-    <div><%= f.label(:age) %><br/>
-      <%= f.text_field :age %></div><br>
+      <div class="form-group"><%= f.label(:age) %><br/>
+        <%= f.text_field :age, class:'form-control', placeholder:'Age'%></div><br>
 
-    <div><%= f.label(:weight) %><br/>
-      <%= f.text_field :weight%></div><br>
+      <div class="input-group"><%= f.label(:weight) %><br/>
+        <%= f.text_field :weight, class:'form-control', placeholder:'Weight (kg)'%></div><br>
 
-    <div><%= f.label(:gender) %><br>
-      <%= f.text_field :gender %></div><br>
+      <div class="input-group"><%= f.label(:gender) %><br>
+        <%= f.text_field :gender %></div><br>
 
-    <%= f.submit "create" %>
+      <%= f.submit "create" %>
 
-    <% end %>
+      <% end %>
+    </div>
   </div>
+
+
+
+<form role="form">
+  <div class="form-group">
+    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Age">
+  </div>
+  <div class="form-group">
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Weight (kg)">
+  </div>
+
+  <div class="radio">
+  <label>
+    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+    Male
+  </label>
+</div>
+<div class="radio">
+  <label>
+    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+    Female
+  </label>
+</div>
+
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+
 </div>
