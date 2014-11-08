@@ -1,18 +1,37 @@
-<div data-hook="admin_target_form_fields">
-  <div data-hook="name" class="field align-center">
-    <%= form_for @user, html: {class: "nifty_form", :multipart => true } do |f| %>
+<div class="container">
+  <h1>onTrack</h1>
+  <div data-hook="admin_target_form_fields">
+    <div data-hook="name" class="field align-center users-form">
+      <%= form_for @user, html: {class: "nifty_form", :multipart => true } do |f| %>
 
-    <div><%= f.label(:age) %><br/>
-      <%= f.text_field :age %></div><br>
+      <div class="form-group form-top data"><%= f.label(:age) %><br/>
+        <%= f.text_field :age, class:'form-control', placeholder:'Age'%>
+      </div><br>
 
-    <div><%= f.label(:weight) %><br/>
-      <%= f.text_field :weight%></div><br>
+      <div class="form-group data">
+        <%= f.label(:weight) %><br/>
+        <%= f.text_field :weight, class:'form-control', placeholder:'Weight (kg)'%>
+      </div><br>
 
-    <div><%= f.label(:gender) %><br>
-      <%= f.text_field :gender %></div><br>
+      <div class="form-group">
+        <%= f.label(:sex) %><br>
+        <%= radio_button_tag(:gender, "M") %>
+        <%= label_tag(:gender, "M") %><br>
+        <%= radio_button_tag(:gender, "F") %>
+        <%= label_tag(:gender, "F") %>
 
-    <%= f.submit "create" %>
+      </div><br>
 
-    <% end %>
+      <div class="form-group">
+        <%= f.label(:sober_O_Clock?) %><br>
+        <%= time_field(:sober_o_Clock, :started_at) %>
+      </div>
+
+      <%= f.submit "Let's Go!", class: "btn btn-success button"  %>
+
+      <% end %>
+    </div>
   </div>
+
 </div>
+
