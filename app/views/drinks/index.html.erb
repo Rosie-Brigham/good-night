@@ -1,0 +1,12 @@
+THIS WILL HAVE ALL THE OPTIONS OF DRINK!
+
+<%= session[:user] %><br>
+<%= @user.age %>
+<%#= @user.nights %>
+
+<br><br><br>
+
+<% @drinks.each do |drink| %>
+  <%=  drink.name %>
+  <%= drink.unit %> <br><br>
+<% end %>
