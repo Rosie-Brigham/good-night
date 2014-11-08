@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+
+ .fixed-footer
+ {
+ 	position: fixed;
+    bottom: 0;
+ }
