@@ -1,0 +1,18 @@
+<div data-hook="admin_target_form_fields">
+  <div data-hook="name" class="field align-center">
+    <%= form_for @user, html: {class: "nifty_form", :multipart => true } do |f| %>
+
+    <div><%= f.label(:age) %><br/>
+      <%= f.text_field :age %></div><br>
+
+    <div><%= f.label(:weight) %><br/>
+      <%= f.text_field :weight%></div><br>
+
+    <div><%= f.label(:gender) %><br>
+      <%= f.text_field :gender %></div><br>
+
+    <%= f.submit "create" %>
+
+    <% end %>
+  </div>
+</div>
