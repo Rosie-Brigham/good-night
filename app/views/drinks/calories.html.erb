@@ -1,0 +1,39 @@
+<% content_for :title do %>Free knitting patterns!<% end %>
+<% content_for :meta do %>
+  <meta content="Free knitting patterns, Vouge, Vouge knitting patterns, Elle, Wall Street Journal, Style, Knitting, free patterns, knityourselfie" name="keywords" />
+  <meta content="Free knitting patterns" name="description" />
+<% end %>
+
+<% @body_class = 'free-patterns' %>
+
+<div class='wrapper-free-patterns'>
+  <div class='row-hero'>
+    <div class='row'>
+      <h1>How <br/>much <br/> excercise?</h1>
+    </div>
+  </div>
+
+  <div class="row row-intro">
+    <div class="large-12 columns">
+      <div>
+        <h2>You have consumed <%= @user.calories %>
+        </h2>
+      </div>
+    </div>
+  </div><!-- /row -->
+
+  <div class="calorie-hints">
+  <% if @user.calories == 10 %>
+    <%= render partial: "variants" %>
+  <%  elsif @user.calories == 20 %>
+    <%= render partial: "variants" %>
+  <% elsif @user.calories == 40 %>
+    <%= render partial: "variants" %>
+  <% elsif @user.calories ==60 %>
+    <%= render partial: "variants" %>
+  <% end %>
+  </div>
+
+</div>
+
+
