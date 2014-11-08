@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141108171156) do
+ActiveRecord::Schema.define(version: 20141108174553) do
 
   create_table "drinks", force: true do |t|
     t.string   "name"
@@ -36,6 +36,8 @@ ActiveRecord::Schema.define(version: 20141108171156) do
     t.integer  "single_spirit_no"
     t.integer  "double_spirit_no"
     t.integer  "pop_no"
+    t.integer  "running_calories"
+    t.integer  "running_time"
   end
 
   create_table "users", force: true do |t|
