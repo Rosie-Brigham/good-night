@@ -1,5 +1,5 @@
 var drinks = [
-    {"name":"pint", "cals":239, units:2.7}, 
+    {"name":"pint", "cals":239, units:2.7},
     {"name":"halfpint", "cals":120, units:1.3},
     {"name":"bottle", "cals":139, units:1.6},
     {"name":"winelarge", "cals":255, units:3.3},
@@ -113,7 +113,7 @@ function reCalc()
   else if (sobertime > user.targettime)
   {
     $('#sobertime').removeClass('green amber');
-    $('#sobertime').addClass('red'); 
+    $('#sobertime').addClass('red');
     sendDangerYo();
   }
 }
@@ -125,7 +125,7 @@ $(function() {
     {
       $("#footer").animate({height:"95%"},1000,function(){});
     }
-    else 
+    else
     {
       $("#footer").animate({height:"120px"},1000,function(){});
     }
@@ -172,4 +172,10 @@ $(function() {
     reCalc();
   });
 
+  $(".reset").on("click", function(e){
+    window.consumedDrinks.push({
+      drink: $(this).data('drinktype'),
+      time: now.getTime()
+    });
+  });
 });
