@@ -11,11 +11,11 @@ class UsersController < ApplicationController
     session[:user] = @user.id
     session[:weight] = @user.weight
     session[:gender] = @user.gender
-    session[:targettime] = @user.targettime
+    session[:targettime] = @user.targettime.to_i
 
     cookies[:weight] = @user.weight.to_json
     cookies[:gender] = @user.gender.to_json
-    cookies[:targettime] = @user.targettime.to_json
+    cookies[:targettime] = @user.targettime.to_i.to_json
     redirect_to drinks_path
   end
 

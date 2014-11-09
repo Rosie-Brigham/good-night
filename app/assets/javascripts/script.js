@@ -11,7 +11,7 @@ var drinks = [
     {"name":"alcopop", "cals":228, units:1.5}
 ];
 
-user = {"weight":83,"gender":"male","targettime":1415516960000,"yo":"JAKEHODGES"};
+user = {"weight":parseInt($.cookie('weight')),"gender":$.cookie('gender'),"targettime":parseInt($.cookie('targettime'))*1000,"yo":$.cookie('yo')};
 
 function sendWarningYo()
 {
