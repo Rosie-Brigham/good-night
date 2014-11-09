@@ -17,7 +17,7 @@ function sendWarningYo()
 {
   var http = new XMLHttpRequest();
   var url = "http://api.justyo.co/yo/";
-  var params = "api_token=77b1fb1c-b11b-4321-8d20-8d57d28624ca&username=" + user.yo;
+  var params = "api_token=b54ceb65-761a-462e-a466-68923ac6caed" + user.yo; //SOFTDRINKTIME
   http.open("POST", url, true);
 
   //Send the proper header information along with the request
@@ -37,7 +37,7 @@ function sendDangerYo()
 {
   var http = new XMLHttpRequest();
   var url = "http://api.justyo.co/yo/";
-  var params = "api_token=77b1fb1c-b11b-4321-8d20-8d57d28624ca&username=" + user.yo;
+  var params = "api_token=0acaf842-b52f-4968-9222-b25dba212e60ca&username=" + user.yo; //STOPDRINKING
   http.open("POST", url, true);
 
   //Send the proper header information along with the request
