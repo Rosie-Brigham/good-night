@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .users {
+  font-family: 'Average Sans', sans-serif;
   background-color: purple;
   padding-bottom: 100%;
   /*background: url(party-dark.jpg);*/
@@ -12,8 +13,10 @@
   background-size: cover;
 
   h1 {
+    font-family: 'Average Sans', sans-serif;
+    font-weight: bold;
     text-align: center;
-    font-size: 50px;
+    font-size: 60px;
     margin-top: 40px;
     color: #CDD6DC;
   }
@@ -31,40 +34,69 @@
         font-size: 13px;
         height: 40px;
         line-height: 18px;
-        margin-bottom: 9px;
-        padding: 4px;
-        width: 80%;
+        width: 70%;
       }
     }
     .data {
-      padding-left: 10%;
-      padding-right: 10%;
+      padding-left: 15%;
+      padding-right: 15%;
     }
-    .age {
-      margin-bottom: 10px;
-    }
-    .weight {
-      padding-top: 5px !important;
+    input#user_weight {
+      height: 40px;
     }
     label {
       font-size: 32px;
     }
 
-    span {
-      margin: 0 2%;
-      input[type="radio"] {
-      display:inline-block;
-      height:40px;
-      text-indent:-9999px;
+    .gender {
+      margin-top: 40px;
+      span {
+        input[type="radio"] {
+          display:inline-block;
+          height:40px;
+          text-indent:-9999px;
+          font-size: 36px;
+        }
+        btn {
+          width: 15px;
+        }
+      }
+      .male {
+        margin-right: 10px;
+        label.btn.btn-primary {
+          width: 60px;
+          background-color: #2E488C;
+        }
+        label.btn.btn-primary:hover {
+           background-color: #282A6C;
+        }
+      }
+      .female {
+        margin-left: 10px;
+        label.btn.btn-primary {
+          width: 60px;
+          background-color: #2E488C;
+        }
+        label.btn.btn-primary:hover {
+           background-color: #282A6C;
+        }
       }
     }
 
-
-
     .button {
-      margin-top: 30px;
-      background-color: #CADAFF;
-      color: #140040;
+      margin-top: 38px;
+      background-color: #282A6C;
+      border-color: #282A6C;
+      color: #CDD6DC;
+      border-radius: 5px;
+      height: 80px;
+      width: 225px;
+      font-weight: bolder;
+      text-transform: uppercase;
+      font-size: 32px;
+    }
+    .button:hover {
+      background-color: #2D2F79;
     }
 
   }

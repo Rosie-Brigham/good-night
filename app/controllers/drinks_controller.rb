@@ -7,7 +7,6 @@ class DrinksController < ApplicationController
   def index
     @user = find_user
     @drinks = Drink.all
-    @night
   end
 
   def calculate

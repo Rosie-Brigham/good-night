@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141108213725) do
+ActiveRecord::Schema.define(version: 20141109000224) do
 
   create_table "drinks", force: true do |t|
     t.string   "name"
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20141108213725) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "night_id"
-    t.datetime "sober_time"
+    t.datetime "targettime"
   end
 
 end
