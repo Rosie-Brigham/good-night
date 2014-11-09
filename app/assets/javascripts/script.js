@@ -99,6 +99,15 @@ function reCalc()
   $('#sobertime').html(moment(sobertime).calendar());
   $('#calcount').html(totalcalories);
 
+  // Update extra info
+  $('#total-calories').html(totalcalories);
+  $('#skip-hours').html(totalcalories/(user.weight*12.3));
+  $('#run-hours').html(totalcalories/(user.weight*9.8));
+  $('#cycle-hours').html(totalcalories/(user.weight*7.5));
+  $('#walk-hours').html(totalcalories/(user.weight*3.3));
+  $('#shop-hours').html(totalcalories/(user.weight*2.3));
+  $('#tv-hours').html(totalcalories/(user.weight*1.3));
+
   if (sobertime + 7200000 < user.targettime)
   {
     $('#sobertime').removeClass('amber red');
