@@ -6,7 +6,7 @@
   background-color: purple;
   padding-bottom: 100%;
   /*background: url(party-dark.jpg);*/
-  background: url(party-dark.jpg) no-repeat center center fixed;
+  background: url(spring-morning.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -24,7 +24,9 @@
   .users-form {
     text-align: center;
 
-    .sober { padding-top: 5%;}
+    .sober {
+      padding-top: 5%;
+    }
     .sober, .gender {
       select {
         border: 1px solid #CCCCCC;
@@ -98,6 +100,32 @@
     .button:hover {
       background-color: #2D2F79;
     }
+  }
+}
 
+@media (max-width: 400px) {
+  .users {
+    h1 {
+      font-size: 50px;
+      margin-top: 20px;
+    }
+
+    .users-form {
+      text-align: center;
+
+      .sober {
+        padding-top: 0%;
+      }
+      .gender {
+        margin-top: 20px;
+      }
+      .users .users-form .data {
+        margin-top: -15px;
+      }
+
+      input.btn.btn-success.button {
+        margin-top: 10px;
+      }
+    }
   }
 }

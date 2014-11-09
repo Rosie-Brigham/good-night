@@ -89,3 +89,105 @@
 .green {
   color:#009900;
 }
+
+@media (max-width: 400px) {
+  .drinks-index {
+    .row {
+      margin-right: 10px;
+    }
+
+    .col-xs-1 {
+      /*padding-right: 30px;*/
+    }
+
+    h1 {
+      font-size: 22px;
+    }
+
+    button.btn.btn-default.info.reset {
+      margin-top: 35px !important;
+      width: 50px !important;
+      height: 40px !important;
+      background-color: #91FFAF;
+      text-align: center;
+      /*font-size: 0;*/
+      /*background: url(reload.png) no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;*/
+    }
+    span {
+      font-size: smaller;
+    }
+    .navbar .calories p {
+      line-height: 40px;
+      text-align: left;
+      text-align: left;
+      padding: 0 10%;
+      font-size: 18px;
+    }
+    span#sobertime {
+      font-size: 16px !important;
+    }
+
+    /*img {
+      height: 30px;
+      width: auto;
+    }*/
+
+    img.beer-pint {
+      margin-top: 20px;
+      width: 20px !important;
+      height: auto;
+    }
+
+    img.beer-half {
+      width: 30%;
+      height: auto;
+    }
+
+    img.beer-bottle {
+      width: 20%;
+      height: auto;
+    }
+
+    img.wine-large {
+      width: 40%;
+      height: auto;
+    }
+
+    img.wine-md {
+      width: 35%;
+      height: auto;
+    }
+
+    img.wine-sm {
+      width: 30%;
+      height: auto;
+    }
+
+    img.shot {
+      width: 45%;
+      height: auto;
+      margin-top: 20px;
+    }
+
+    img.mixer-1 {
+      width: 45%;
+      height: auto;
+      margin-top: 20px;
+    }
+
+    img.mixer-2 {
+      width: 40%;
+      height: auto;
+      margin-top: 20px;
+    }
+
+    img.wine-bottle {
+      width: 40%;
+      height: auto;
+    }
+  }
+}
