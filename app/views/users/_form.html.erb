@@ -1,31 +1,46 @@
 <div class="container">
-  <h1>onTrack</h1>
+  <h1>Sober o'Clock</h1>
   <div data-hook="admin_target_form_fields">
     <div data-hook="name" class="field align-center users-form">
       <%= form_for @user, html: {class: "nifty_form", :multipart => true } do |f| %>
 
-      <div class="form-group form-top data"><%= f.label(:age) %><br/>
-        <%= f.text_field :age, class:'form-control', placeholder:'Age'%>
-      </div><br>
+      <div class="form-group sober">
+        <%#= f.label(:sober_O_Clock?) %><br>
+        <% d = Date.tomorrow %>
+        <%= f.select :targettime, [
+          ["6am", d + 6.hours], ["7am", d + 7.hours], ["8am", d + 8.hours],
+          ["9am", d + 9.hours], ["10am", d + 10.hours],
+          ["11am", d + 11.hours], ["12pm", d + 12.hours],
+          ["1pm", d + 13.hours], ["2pm", d + 14.hours], ["3pm", d + 15.hours],
+          ["4pm", d + 16.hours], ["5pm", d + 17.hours],
+          ["6pm", d + 18.hours], ["7pm", d + 19.hours], ["8pm", d + 20.hours], ["9pm", d + 21.hours]
+        ], class:'targettime'%>
+        <% puts d %>
+      </div>
 
-      <div class="form-group data">
-        <%= f.label(:weight) %><br/>
+      <!-- <div class="form-group form-top data"> -->
+        <%#= f.label(:age) %><br/>
+        <%#= f.text_field :age, class:'form-control', placeholder:'Age'%>
+      <!-- </div><br> -->
+
+      <div class="form-group data weight">
+        <%#= f.label(:weight) %><br/>
         <%= f.text_field :weight, class:'form-control', placeholder:'Weight (kg)'%>
       </div><br>
 
-      <div class="form-group">
-        <%= f.label(:sex) %><br>
-        <%= radio_button_tag(:gender, "M") %>
-        <%= label_tag(:gender, "M") %><br>
-        <%= radio_button_tag(:gender, "F") %>
-        <%= label_tag(:gender, "F") %>
-
+      <div class="form-group gender">
+        <div class="btn-group" data-toggle="buttons-radio">
+          <%#= f.label(:sex) %>
+          <span class='male'>
+            <label for="Male" class="btn btn-primary">M</label>
+            <%= f.radio_button :gender, "M", :id=>"Male", :style=>"display:none;" %>
+          </span>
+          <span class='female'>
+            <label for="F" class="btn btn-primary">F</label>
+            <%= f.radio_button :gender, "F", :id=>"Female", :style=>"display:none;" %>
+          </span>
+        </div>
       </div><br>
-
-      <div class="form-group">
-        <%= f.label(:sober_O_Clock?) %><br>
-        <%= time_field(:sober_o_Clock, :started_at) %>
-      </div>
 
       <%= f.submit "Let's Go!", class: "btn btn-success button"  %>
 
