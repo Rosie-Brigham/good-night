@@ -17,7 +17,7 @@ function sendWarningYo()
 {
   var http = new XMLHttpRequest();
   var url = "http://api.justyo.co/yo/";
-  var params = "api_token=77b1fb1c-b11b-4321-8d20-8d57d28624ca&username=" + user.yo;
+  var params = "api_token=b54ceb65-761a-462e-a466-68923ac6caed" + user.yo; //SOFTDRINKTIME
   http.open("POST", url, true);
 
   //Send the proper header information along with the request
@@ -37,7 +37,7 @@ function sendDangerYo()
 {
   var http = new XMLHttpRequest();
   var url = "http://api.justyo.co/yo/";
-  var params = "api_token=77b1fb1c-b11b-4321-8d20-8d57d28624ca&username=" + user.yo;
+  var params = "api_token=0acaf842-b52f-4968-9222-b25dba212e60ca&username=" + user.yo; //STOPDRINKING
   http.open("POST", url, true);
 
   //Send the proper header information along with the request
@@ -98,6 +98,58 @@ function reCalc()
 
   $('#sobertime').html(moment(sobertime).calendar());
   $('#calcount').html(totalcalories);
+
+  // Update extra info
+  $('#total-calories').html(totalcalories);
+
+  var totalminutes = (totalcalories/(user.weight*12.3))*60;
+  var hours = Math.floor( totalminutes / 60);          
+  var minutes = Math.round(totalminutes % 60);
+  if (hours == 0)
+    $('#skip-hours').html(minutes + " minutes");
+  else
+    $('#skip-hours').html(hours + " hours " + minutes + " minutes");
+
+
+  var totalminutes = (totalcalories/(user.weight*9.8))*60;
+  var hours = Math.floor( totalminutes / 60);          
+  var minutes = Math.round(totalminutes % 60);
+  if (hours == 0)
+    $('#run-hours').html(minutes + " minutes");
+  else
+    $('#run-hours').html(hours + " hours " + minutes + " minutes");
+
+  var totalminutes = (totalcalories/(user.weight*7.5))*60;
+  var hours = Math.floor( totalminutes / 60);          
+  var minutes = Math.round(totalminutes % 60);
+  if (hours == 0)
+    $('#cycle-hours').html(minutes + " minutes");
+  else
+    $('#cycle-hours').html(hours + " hours " + minutes + " minutes");
+
+  var totalminutes = (totalcalories/(user.weight*3.3))*60;
+  var hours = Math.floor( totalminutes / 60);          
+  var minutes = Math.round(totalminutes % 60);
+  if (hours == 0)
+    $('#walk-hours').html(minutes + " minutes");
+  else
+    $('#walk-hours').html(hours + " hours " + minutes + " minutes");
+
+  var totalminutes = (totalcalories/(user.weight*2.3))*60;
+  var hours = Math.floor( totalminutes / 60);          
+  var minutes = Math.round(totalminutes % 60);
+  if (hours == 0)
+    $('#shop-hours').html(minutes + " minutes");
+  else
+    $('#shop-hours').html(hours + " hours " + minutes + " minutes");
+
+  var totalminutes = (totalcalories/(user.weight*1.3))*60;
+  var hours = Math.floor( totalminutes / 60);          
+  var minutes = Math.round(totalminutes % 60);
+  if (hours == 0)
+    $('#tv-hours').html(minutes + " minutes");
+  else
+    $('#tv-hours').html(hours + " hours " + minutes + " minutes");
 
   if (sobertime + 7200000 < user.targettime)
   {
