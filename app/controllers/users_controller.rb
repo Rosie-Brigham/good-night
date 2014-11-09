@@ -11,11 +11,13 @@ class UsersController < ApplicationController
     session[:user] = @user.id
     session[:weight] = @user.weight
     session[:gender] = @user.gender
-    session[:targettime] = @user.targettime
+    session[:targettime] = @user.targettime.to_i
+    session[:yo] = @user.email
 
     cookies[:weight] = @user.weight.to_json
     cookies[:gender] = @user.gender.to_json
-    cookies[:targettime] = @user.targettime.to_json
+    cookies[:targettime] = @user.targettime.to_i.to_json
+    cookies[:yo] = @user.email
     redirect_to drinks_path
   end
 
@@ -31,7 +33,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:age, :weight, :gender, :targettime)
+    params.require(:user).permit(:age, :weight, :gender, :targettime, :email)
   end
 
 end

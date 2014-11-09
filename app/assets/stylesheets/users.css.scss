@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .users {
-  font-family: 'Average Sans', sans-serif;
+  /*font-family: 'Average Sans', sans-serif;*/
   background-color: purple;
   padding-bottom: 100%;
   /*background: url(party-dark.jpg);*/
@@ -13,7 +13,7 @@
   background-size: cover;
 
   h1 {
-    font-family: 'Average Sans', sans-serif;
+    /*font-family: 'Average Sans', sans-serif;*/
     font-weight: bold;
     text-align: center;
     font-size: 60px;
@@ -24,8 +24,8 @@
   .users-form {
     text-align: center;
 
-    .sober {
-      padding-top: 5%;
+    .sober { padding-top: 5%;}
+    .sober, .gender {
       select {
         border: 1px solid #CCCCCC;
         border-radius: 3px 3px 3px 3px;
