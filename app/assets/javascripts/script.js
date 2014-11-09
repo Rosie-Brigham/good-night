@@ -11,7 +11,47 @@ var drinks = [
     {"name":"alcopop", "cals":228, units:1.5}
 ];
 
-user = {"weight":83,"gender":"male","targettime":1415516960000};
+user = {"weight":83,"gender":"male","targettime":1415516960000,"yo":"JAKEHODGES"};
+
+function sendWarningYo()
+{
+  var http = new XMLHttpRequest();
+  var url = "http://api.justyo.co/yo/";
+  var params = "api_token=77b1fb1c-b11b-4321-8d20-8d57d28624ca&username=" + user.yo;
+  http.open("POST", url, true);
+
+  //Send the proper header information along with the request
+  http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  http.setRequestHeader("Content-length", params.length);
+  http.setRequestHeader("Connection", "close");
+
+  http.onreadystatechange = function() {//Call a function when the state changes.
+      if(http.readyState == 4 && http.status == 200) {
+          //alert(http.responseText);
+      }
+  }
+  http.send(params);
+}
+
+function sendDangerYo()
+{
+  var http = new XMLHttpRequest();
+  var url = "http://api.justyo.co/yo/";
+  var params = "api_token=77b1fb1c-b11b-4321-8d20-8d57d28624ca&username=" + user.yo;
+  http.open("POST", url, true);
+
+  //Send the proper header information along with the request
+  http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  http.setRequestHeader("Content-length", params.length);
+  http.setRequestHeader("Connection", "close");
+
+  http.onreadystatechange = function() {//Call a function when the state changes.
+      if(http.readyState == 4 && http.status == 200) {
+          //alert(http.responseText);
+      }
+  }
+  http.send(params);
+}
 
 function reCalc()
 {
@@ -63,15 +103,31 @@ function reCalc()
   {
     $('#sobertime').removeClass('green red');
     $('#sobertime').addClass('amber');
+    sendWarningYo();
   }
   else if (sobertime > user.targettime)
   {
     $('#sobertime').removeClass('green amber');
     $('#sobertime').addClass('red'); 
+    sendDangerYo();
   }
 }
 
 $(function() {
+
+  $(".info").on("click", function(e){
+    if ($("#footer").css("height") == "120px")
+    {
+      $("#footer").animate({height:"95%"},1000,function(){});
+    }
+    else 
+    {
+      $("#footer").animate({height:"120px"},1000,function(){});
+    }
+    $(".info2").toggleClass("glyphicon-chevron-down");
+    $(".info2").toggleClass("glyphicon-chevron-up");
+    // $("#footer").css("height","100%")
+});
 
   $(".minus").on("click", function(e){
 
