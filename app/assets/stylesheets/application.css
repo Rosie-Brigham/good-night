@@ -20,7 +20,7 @@
     bottom: 0;
  }
 
- .col-xs-1, .col-xs-4, .col-xs-10 {
+ .col-xs-1, .col-xs-3, .col-xs-4, .col-xs-10 {
  	height: 100% !important;
  }
  .custombtn {
@@ -34,8 +34,24 @@
  	height:80px;
  }
 
+ .navbar .container .row {
+ 	height:120px;
+ }
+
 .align-helper{
 	height:100%;
 	display:inline-block;
 	vertical-align: middle;
+}
+
+.red {
+	color:#FF0000;
+}
+
+.amber {
+	color:#FFCC00;
+}
+
+.green {
+	color:#009900;
 }

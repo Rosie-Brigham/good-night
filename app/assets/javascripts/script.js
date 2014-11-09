@@ -11,7 +11,7 @@ var drinks = [
     {"name":"alcopop", "cals":228, units:1.5}
 ];
 
-user = {"weight":83,"gender":"male"};
+user = {"weight":83,"gender":"male","targettime":1415516960000};
 
 function reCalc()
 {
@@ -53,6 +53,22 @@ function reCalc()
 
   $('#sobertime').html(moment(sobertime).calendar());
   $('#calcount').html(totalcalories);
+
+  if (sobertime + 7200000 < user.targettime)
+  {
+    $('#sobertime').removeClass('amber red');
+    $('#sobertime').addClass('green');
+  }
+  else if ((sobertime < user.targettime) && (sobertime + 7200000 > user.targettime))
+  {
+    $('#sobertime').removeClass('green red');
+    $('#sobertime').addClass('amber');
+  }
+  else if (sobertime > user.targettime)
+  {
+    $('#sobertime').removeClass('green amber');
+    $('#sobertime').addClass('red'); 
+  }
 }
 
 $(function() {
