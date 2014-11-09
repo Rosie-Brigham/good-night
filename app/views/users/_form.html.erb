@@ -32,12 +32,12 @@
         <div class="btn-group" data-toggle="buttons-radio">
           <%#= f.label(:sex) %>
           <span class='male'>
-            <label for="Male" class="btn btn-primary">M</label>
-            <%= f.radio_button :gender, "M", :id=>"Male", :style=>"display:none;" %>
+            <label for="Male" class="btn btn-primary male">M</label>
+            <%= f.radio_button :gender, "M", :id=>"male", :style=>"display:none;", :checked => true %>
           </span>
           <span class='female'>
-            <label for="F" class="btn btn-primary">F</label>
-            <%= f.radio_button :gender, "F", :id=>"Female", :style=>"display:none;" %>
+            <label for="F" class="btn btn-primary female">F</label>
+            <%= f.radio_button :gender, "F", :id=>"female", :style=>"display:none;" %>
           </span>
         </div>
       </div><br>

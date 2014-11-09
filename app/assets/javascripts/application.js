@@ -10,7 +10,35 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require users
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+core = {};
+
+$(document).ready(function() {
+  core.readyFormGenderMale();
+  core.readyFormGenderFemale();
+});
+
+/* ----- Init methods ----- */
+
+// Attach events for referee form
+// core.readyFormGenderMale = function() {
+//   $('.male').on('click', function(e) {
+//     e.preventDefault();
+//     // $("#male-radio").attr("checked", true)
+//     jQuery("#radio_1").attr('checked', 'checked');
+//     e.preventDefault();
+//   });
+// }
+
+// core.readyFormGenderFemale = function() {
+//   $('.female').on('click', function(e) {
+//     e.preventDefault();
+//     alert('hello!')
+//     $("#female").prop("checked", true)
+//   });
+// }

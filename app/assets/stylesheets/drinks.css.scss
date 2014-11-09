@@ -1,3 +1,50 @@
 // Place all the styles related to the drinks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.fixed-footer
+ {
+  position: fixed;
+  bottom: 0;
+ }
+
+ .col-xs-1, .col-xs-3, .col-xs-4, .col-xs-10 {
+  height: 100% !important;
+ }
+ .custombtn {
+  height: 100% !important;
+  border: none !important;
+  width: 100% !important;
+  font-size: 40px;
+ }
+
+ .row {
+  height:80px;
+ }
+
+ .navbar{
+  height:100%;
+
+  .calories {
+    text-align: center;
+  }
+ }
+
+.align-helper{
+  height:100%;
+  display:inline-block;
+  vertical-align: middle;
+}
+
+.red {
+  color:#FF0000;
+}
+
+.amber {
+  color:#FFCC00;
+}
+
+.green {
+  color:#009900;
+}
