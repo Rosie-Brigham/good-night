@@ -7,6 +7,10 @@
       <div class="form-group sober">
         <%#= f.label(:sober_O_Clock?) %><br>
         <% d = Date.tomorrow %>
+        <a href="#">
+          <%=image_tag("calendar.png",width:'40',id:'google', alt: 'Import from your calendar', class: 'calendar')%>
+        </a>
+
         <%= f.select :targettime, [
           ["What's your FreshStart time tomorrow?", nil],
           ["6am", d + 6.hours], ["7am", d + 7.hours], ["8am", d + 8.hours],
@@ -17,10 +21,6 @@
           ["6pm", d + 18.hours], ["7pm", d + 19.hours], ["8pm", d + 20.hours], ["9pm", d + 21.hours]
         ], class:'targettime'%>
         <% puts d %>
-      </div>
-
-      <div class="form-group">
-        <a href="#"><%=image_tag("google.png",width:'200',id:'google')%></a>
       </div>
 
       <div class="form-group gender">

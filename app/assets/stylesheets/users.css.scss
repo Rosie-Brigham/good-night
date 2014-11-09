@@ -26,6 +26,8 @@
 
     .sober {
       padding-top: 5%;
+      padding-right: 27px;
+      margin-left: 28px;
     }
     .sober, .gender {
       select {
@@ -38,6 +40,10 @@
         line-height: 18px;
         width: 70%;
       }
+    }
+
+    select {
+      padding-right: 30% !important;
     }
     .data {
       padding-left: 15%;

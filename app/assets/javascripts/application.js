@@ -16,29 +16,11 @@
 //= require turbolinks
 //= require_tree .
 
-core = {};
+/* ----- Init methods ----- */
+$(function() {
 
-$(document).ready(function() {
-  core.readyFormGenderMale();
-  core.readyFormGenderFemale();
+$("#google").on("click", function(e){
+  $('select>option:eq(4)').attr('selected', 'selected');
 });
 
-/* ----- Init methods ----- */
-
-// Attach events for referee form
-// core.readyFormGenderMale = function() {
-//   $('.male').on('click', function(e) {
-//     e.preventDefault();
-//     // $("#male-radio").attr("checked", true)
-//     jQuery("#radio_1").attr('checked', 'checked');
-//     e.preventDefault();
-//   });
-// }
-
-// core.readyFormGenderFemale = function() {
-//   $('.female').on('click', function(e) {
-//     e.preventDefault();
-//     alert('hello!')
-//     $("#female").prop("checked", true)
-//   });
-// }
+});
