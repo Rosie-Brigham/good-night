@@ -23,11 +23,44 @@
   height:80px;
  }
 
- .navbar{
+ .navbar {
   height:100%;
 
   .calories {
     text-align: center;
+    h4, h3 {
+      padding-left: 10%;
+      text-align: left;
+    }
+    p {
+      line-height: 50px;
+      text-align: left;
+      text-align: left;
+      padding: 0 10%;
+      font-size: 24px;
+      img {
+        height: 30px;
+        width: auto;
+      }
+      #run-hours {
+        color: #25B824;
+      }
+      #cycle-hours {
+        color: #CDFF00;
+      }
+      #skip-hours {
+        color: #FFCB02;
+      }
+      #walk-hours {
+        color: #FF9535;
+      }
+      #shop-hours {
+        color: #FF5E1C;
+      }
+      #tv-hours {
+        color: #FF0F43;
+      }
+    }
   }
  }
 
