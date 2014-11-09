@@ -11,7 +11,7 @@ var drinks = [
     {"name":"alcopop", "cals":228, units:1.5}
 ];
 
-user = {"weight":parseInt($.cookie('weight')),"gender":$.cookie('gender'),"targettime":parseInt($.cookie('targettime'))*1000,"yo":$.cookie('yo')};
+user = {"weight":parseInt($.cookie('weight')),"gender":"male","targettime":parseInt($.cookie('targettime'))*1000,"yo":$.cookie('yo')};
 
 function sendWarningYo()
 {
@@ -61,9 +61,14 @@ function reCalc()
   {
     var dr = 0.68;
   }
-  else
+  else if (user.gender == "female")
   {
     var dr = 0.55;
+  }
+  else
+  {
+    alert("Oops, invalid gender!");
+    parent.history.back();
   }
 
   var BAC = 0;

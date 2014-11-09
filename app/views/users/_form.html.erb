@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>Sober o'Clock</h1>
+  <h1>FreshStart</h1>
   <div data-hook="admin_target_form_fields">
     <div data-hook="name" class="field align-center users-form">
       <%= form_for @user, html: {class: "nifty_form", :multipart => true } do |f| %>
@@ -8,6 +8,7 @@
         <%#= f.label(:sober_O_Clock?) %><br>
         <% d = Date.tomorrow %>
         <%= f.select :targettime, [
+          ["What's your FreshStart time?", nil],
           ["6am", d + 6.hours], ["7am", d + 7.hours], ["8am", d + 8.hours],
           ["9am", d + 9.hours], ["10am", d + 10.hours],
           ["11am", d + 11.hours], ["12pm", d + 12.hours],
@@ -16,6 +17,14 @@
           ["6pm", d + 18.hours], ["7pm", d + 19.hours], ["8pm", d + 20.hours], ["9pm", d + 21.hours]
         ], class:'targettime'%>
         <% puts d %>
+      </div>
+
+      <div class="form-group gender">
+        <%#= f.label(:sober_O_Clock?) %><br>
+        <%= f.select :gender, [
+          ["Sex", nil],
+          ["Male", "male"], ["Female", "female"]
+        ], class:'gender'%>
       </div>
 
       <!-- <div class="form-group form-top data"> -->
@@ -28,7 +37,12 @@
         <%= f.text_field :weight, class:'form-control', placeholder:'Weight (kg)'%>
       </div><br>
 
-      <div class="form-group gender">
+      <div class="form-group data yo">
+        <%#= f.label(:weight) %><br/>
+        <%= f.text_field :email, class:'form-control', placeholder:'YO! username (optional)'%>
+      </div><br>
+
+<!--       <div class="form-group gender">
         <div class="btn-group" data-toggle="buttons-radio">
           <%#= f.label(:sex) %>
           <span class='male'>
@@ -40,7 +54,7 @@
             <%= f.radio_button :gender, "F", :id=>"female", :style=>"display:none;" %>
           </span>
         </div>
-      </div><br>
+      </div><br> -->
 
       <%= f.submit "Let's Go!", class: "btn btn-success button"  %>
 
