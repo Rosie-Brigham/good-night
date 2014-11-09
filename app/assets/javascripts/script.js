@@ -101,12 +101,55 @@ function reCalc()
 
   // Update extra info
   $('#total-calories').html(totalcalories);
-  $('#skip-hours').html(totalcalories/(user.weight*12.3));
-  $('#run-hours').html(totalcalories/(user.weight*9.8));
-  $('#cycle-hours').html(totalcalories/(user.weight*7.5));
-  $('#walk-hours').html(totalcalories/(user.weight*3.3));
-  $('#shop-hours').html(totalcalories/(user.weight*2.3));
-  $('#tv-hours').html(totalcalories/(user.weight*1.3));
+
+  var totalminutes = (totalcalories/(user.weight*12.3))*60;
+  var hours = Math.floor( totalminutes / 60);          
+  var minutes = Math.round(totalminutes % 60);
+  if (hours == 0)
+    $('#skip-hours').html(minutes + " minutes");
+  else
+    $('#skip-hours').html(hours + " hours " + minutes + " minutes");
+
+
+  var totalminutes = (totalcalories/(user.weight*9.8))*60;
+  var hours = Math.floor( totalminutes / 60);          
+  var minutes = Math.round(totalminutes % 60);
+  if (hours == 0)
+    $('#run-hours').html(minutes + " minutes");
+  else
+    $('#run-hours').html(hours + " hours " + minutes + " minutes");
+
+  var totalminutes = (totalcalories/(user.weight*7.5))*60;
+  var hours = Math.floor( totalminutes / 60);          
+  var minutes = Math.round(totalminutes % 60);
+  if (hours == 0)
+    $('#cycle-hours').html(minutes + " minutes");
+  else
+    $('#cycle-hours').html(hours + " hours " + minutes + " minutes");
+
+  var totalminutes = (totalcalories/(user.weight*3.3))*60;
+  var hours = Math.floor( totalminutes / 60);          
+  var minutes = Math.round(totalminutes % 60);
+  if (hours == 0)
+    $('#walk-hours').html(minutes + " minutes");
+  else
+    $('#walk-hours').html(hours + " hours " + minutes + " minutes");
+
+  var totalminutes = (totalcalories/(user.weight*2.3))*60;
+  var hours = Math.floor( totalminutes / 60);          
+  var minutes = Math.round(totalminutes % 60);
+  if (hours == 0)
+    $('#shop-hours').html(minutes + " minutes");
+  else
+    $('#shop-hours').html(hours + " hours " + minutes + " minutes");
+
+  var totalminutes = (totalcalories/(user.weight*1.3))*60;
+  var hours = Math.floor( totalminutes / 60);          
+  var minutes = Math.round(totalminutes % 60);
+  if (hours == 0)
+    $('#tv-hours').html(minutes + " minutes");
+  else
+    $('#tv-hours').html(hours + " hours " + minutes + " minutes");
 
   if (sobertime + 7200000 < user.targettime)
   {
