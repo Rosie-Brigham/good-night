@@ -9,6 +9,13 @@ class UsersController < ApplicationController
     @user.night = Night.new(starttime: Time.now)
     @user.save
     session[:user] = @user.id
+    session[:weight] = @user.weight
+    session[:gender] = @user.gender
+    session[:targettime] = @user.targettime
+
+    cookies[:weight] = @user.weight.to_json
+    cookies[:gender] = @user.gender.to_json
+    cookies[:targettime] = @user.targettime.to_json
     redirect_to drinks_path
   end
 
